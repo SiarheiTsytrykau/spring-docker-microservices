@@ -1,0 +1,16 @@
+version: "3.7"
+#version depends on docker engine version: https://docs.docker.com/compose/compose-file/
+
+services:
+
+  #docker container run -d --name server --publish 8761:8761 server
+  server:
+    build: ./server
+      #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+    ports:
+      - "8761:8761"
+
+  client:
+    build: ./client
+    ports:
+      - "8080:8080"
