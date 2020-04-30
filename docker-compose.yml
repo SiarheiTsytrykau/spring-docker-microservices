@@ -5,15 +5,14 @@ services:
   #docker container run -d --name server --publish 8761:8761 server
   server:
     image: server:latest
-    #build: ./server - the problem was: image name generated as 'microservices-docker_server', but build.sh generated 'server'
-      #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+    build: ./server #Either a path to a directory containing a Dockerfile, or a url to a git repository.
     container_name: server
     ports:
       - "8761:8761"
 
   client:
     image: client:latest
-    #build: ./client
+    build: ./client
     container_name: client
     ports:
       - "8080:8080"
