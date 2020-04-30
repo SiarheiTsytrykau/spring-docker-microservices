@@ -1,16 +1,24 @@
 version: "3.7"
-#version depends on docker engine version: https://docs.docker.com/compose/compose-file/
+  #version depends on docker engine version: https://docs.docker.com/compose/compose-file/
 
 services:
-
   #docker container run -d --name server --publish 8761:8761 server
   server:
-    build: ./server
+    image: server:latest
+    #build: ./server - the problem was: image name generated as 'microservices-docker_server', but build.sh generated 'server'
       #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+    container_name: server
     ports:
       - "8761:8761"
 
   client:
-    build: ./client
+    image: client:latest
+    #build: ./client
+    container_name: client
     ports:
       - "8080:8080"
+    depends_on:
+      - "server"
+    environment:
+      EUREKA_SERVER: http://172.18.0.2:8761/eureka
+
