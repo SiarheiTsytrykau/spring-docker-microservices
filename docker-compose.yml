@@ -7,6 +7,8 @@ services:
     image: server:latest
     build: ./server #Either a path to a directory containing a Dockerfile, or a url to a git repository.
     container_name: server
+    #expose: - expose for private docker network only. won't be accessible from localhost
+    #  - 8761
     ports:
       - "8761:8761"
 
