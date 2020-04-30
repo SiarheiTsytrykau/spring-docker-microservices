@@ -12,6 +12,9 @@
     <modules>
         <module>server</module>
         <module>client</module>
+        <module>profile</module>
+        <module>metadata</module>
+        <module>content</module>
     </modules>
 
 </project>
