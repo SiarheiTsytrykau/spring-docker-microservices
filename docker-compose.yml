@@ -22,3 +22,36 @@ services:
       - "server"
     environment:
       EUREKA_SERVER: http://server:8761/eureka
+
+  profile:
+    image: profile:latest
+    build: ./profile
+    container_name: profile
+    ports:
+      - "9000:8080"
+    depends_on:
+      - "server"
+    environment:
+      EUREKA_SERVER: http://server:8761/eureka
+
+  metadata:
+    image: metadata:latest
+    build: ./metadata
+    container_name: metadata
+    ports:
+      - "9001:8080"
+    depends_on:
+      - "server"
+    environment:
+      EUREKA_SERVER: http://server:8761/eureka
+
+  content:
+    image: content:latest
+    build: ./content
+    container_name: content
+    ports:
+      - "9002:8080"
+    depends_on:
+      - "server"
+    environment:
+      EUREKA_SERVER: http://server:8761/eureka
