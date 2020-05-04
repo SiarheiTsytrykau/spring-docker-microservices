@@ -12,6 +12,17 @@ services:
     ports:
       - "8761:8761"
 
+  admin:
+    image: admin:latest
+    build: ./admin
+    container_name: admin
+    ports:
+      - "8082:8080"
+    depends_on:
+      - "server"
+    environment:
+      EUREKA_SERVER: http://server:8761/eureka
+
   client:
     image: client:latest
     build: ./client

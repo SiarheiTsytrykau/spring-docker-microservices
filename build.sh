@@ -41,3 +41,11 @@ docker image rm content
 cd content
 ./mvnw clean package -DskipTests=true
 cd ..
+
+echo "Building the Admin service"
+docker container stop admin
+docker container rm admin
+docker image rm admin
+cd admin
+./mvnw clean package -DskipTests=true
+cd ..

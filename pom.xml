@@ -15,6 +15,7 @@
         <module>profile</module>
         <module>metadata</module>
         <module>content</module>
+        <module>admin</module>
     </modules>
 
 </project>
