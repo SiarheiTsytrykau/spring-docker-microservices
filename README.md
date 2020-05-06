@@ -12,8 +12,16 @@ How to start all microservices:
 
 3. run docker-compose up
 
-4. Go to Kibana UI by URL localhost:5601  
-   Services is starting. It may take more than 2-4 minutes
+After the services started in 2-4 minutes check the URLs:
+  Eureka            http://localhost:8761/
+  Client service    http://localhost:8080/test
+  Kibana            http://localhost:5601/
+    
+Known issues and steps to do:
+ 1) ./filebeat/filebeat.yml
+    How to replace elk in elk:5044 with the hostname or IP address of the ELK-serving host.
+    Now it's looks like elk service accessible from localhost:5044.
+    In cloud it will be a problem to get the service, as we don't know URL that will be assigned.    
 
 ELK doesn't start issues:
     To see status of docker services: Click docker icon in tray -> Dashboard 
