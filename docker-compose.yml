@@ -66,3 +66,16 @@ services:
       - "server"
     environment:
       EUREKA_SERVER: http://server:8761/eureka
+
+  #https://elk-docker.readthedocs.io/
+  elk:
+    image: sebp/elk:761
+    ports:
+      - "5601:5601" #kibana
+      - "9200:9200" #elastic
+      - "5044:5044" #logstash beats filebeat
+    environment:
+      # https://elk-docker.readthedocs.io/#frequently-encountered-issues
+      # https://elk-docker.readthedocs.io/#overriding-variables
+      ES_CONNECT_RETRY: 60 # number of seconds to wait for Elasticsearch to be up before starting Logstash and/or Kibana
+      MAX_MAP_COUNT: 262144 # limit on mmap counts (default: 65530)

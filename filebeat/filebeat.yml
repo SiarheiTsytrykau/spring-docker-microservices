@@ -1,0 +1,20 @@
+# https://www.elastic.co/guide/en/beats/filebeat/6.0/logstash-output.html
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - elk:5044
+    timeout: 15
+    ssl:
+      certificate_authorities:
+      - /etc/pki/tls/certs/logstash-beats.crt
+# https://www.elastic.co/guide/en/beats/filebeat/master/configuration-filebeat-options.html
+filebeat:
+  inputs:
+    - type: log
+      paths:
+        - /logs/spring.log
+    - type: log
+      paths:
+        - "/var/log/filebeat/*.log"
+      fields_under_root: true
