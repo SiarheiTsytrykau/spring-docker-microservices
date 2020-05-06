@@ -49,3 +49,7 @@ docker image rm admin
 cd admin
 ./mvnw clean package -DskipTests=true
 cd ..
+
+echo "Building image based on Java with Filebeat installed"
+docker image rm javafilebeat
+docker image build -t javafilebeat ./filebeat

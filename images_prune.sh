@@ -19,3 +19,7 @@ docker image rm profile
 docker container stop content
 docker container rm content
 docker image rm content
+
+echo "Building image based on Java with Filebeat installed"
+docker image rm javafilebeat
+docker image build -t javafilebeat ./filebeat
