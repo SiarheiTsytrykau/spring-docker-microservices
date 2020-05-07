@@ -14,8 +14,9 @@ How to start all microservices:
 
 After the services started in 2-4 minutes check the URLs:
   Eureka            http://localhost:8761/
-  Client service    http://localhost:8080/test
   Kibana            http://localhost:5601/
+  Spring Boot Admin http://localhost:8082/
+  Client service    http://localhost:8080/test
     
 Known issues and steps to do:
  1) ./filebeat/filebeat.yml
