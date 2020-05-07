@@ -38,8 +38,10 @@ services:
     image: profile:latest
     build: ./profile
     container_name: profile
-    ports:
-      - "9000:8080"
+#    ports:
+#      - "9000:8080"
+    expose:
+      - "8080"
     depends_on:
       - "server"
     environment:

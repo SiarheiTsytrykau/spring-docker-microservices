@@ -17,6 +17,7 @@ After the services started in 2-4 minutes check the URLs:
   Kibana            http://localhost:5601/
   Spring Boot Admin http://localhost:8082/
   Client service    http://localhost:8080/test
+                    http://localhost:8080/get/profile/1 - client service will ask profile service to return profile with id = 1
     
 Known issues and steps to do:
  1) ./filebeat/filebeat.yml
