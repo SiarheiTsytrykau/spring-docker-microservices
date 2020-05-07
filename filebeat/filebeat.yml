@@ -3,7 +3,7 @@ output:
   logstash:
     enabled: true
     hosts:
-      - elk:5044
+      - elk:5044 # server name might be not 'elk' but 'microservices-docker_elk_1'
     timeout: 15
     ssl:
       certificate_authorities:
