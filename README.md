@@ -38,3 +38,6 @@ https://github.com/spujadas/elk-docker.git
 Help to start ELK and filebeat
 https://elk-docker.readthedocs.io/
 
+Networking in Compose
+https://docs.docker.com/compose/networking/
+https://www.slideshare.net/SreenivasMakam/docker-networking-overview
